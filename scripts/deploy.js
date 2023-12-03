@@ -1,33 +1,43 @@
-// We require the Hardhat Runtime Environment explicitly here. This is optional
-// but useful for running the script in a standalone fashion through `node <script>`.
-//
-// You can also run a script with `npx hardhat run <script>`. If you do that, Hardhat
-// will compile your contracts, add the Hardhat Runtime Environment's members to the
-// global scope, and execute the script.
-const hre = require("hardhat");
+const { ethers } = require("hardhat");
 
 async function main() {
-  const currentTimestampInSeconds = Math.round(Date.now() / 1000);
-  const unlockTime = currentTimestampInSeconds + 60;
+  // hardhat me otorga a los signers
+  // - si publicamos a un blockchain local: signers ficticios
+  // - si publico a una red (mumbai): signer es el mismo de hardhat.config
+  var [owner, alice, bob] = await ethers.getSigners();
 
-  const lockedAmount = hre.ethers.parseEther("0.001");
+  // Contrato a publicar: BBTKN
+  var contract = await ethers.deployContract("BBTKN");
+  console.log(`Address del contrato ${await contract.getAddress()}`);
 
-  const lock = await hre.ethers.deployContract("Lock", [unlockTime], {
-    value: lockedAmount,
-  });
+  // Esperar confirmaciones: cuando publicas un contrato en testnet/mainnet
+  // necesitas esperar 5 confirmaciones para luego verificar el contrato (script)
+  // Esperando 10 confirmaciones
+  // Se espera cuando publicas tu contrato en testnet/mainnet. No se usa en blockchain local
+  if (
+    !!process.env.HARDHAT_NETWORK &&
+    process.env.HARDHAT_NETWORK != "localhost"
+  ) {
+    // HARDHAT_NETWORK: mumbai
+    // HARDHAT_NETWORK: $ npx hardhat --network [HARDHAT_NETWORK] run script/deploy.js
+    var res = await contract.waitForDeployment();
+    await res.deploymentTransaction().wait(10);
+  }
 
-  await lock.waitForDeployment();
+  if (
+    !!process.env.HARDHAT_NETWORK &&
+    process.env.HARDHAT_NETWORK != "localhost"
+  ) {
+    // hre: no se declara porque el comando crea un contexto de hardhat donde injecta esa variables
+    await hre.run("verify:verify", {
+      address: await contract.getAddress(),
+      constructorArguments: [],
+    });
+  }
 
-  console.log(
-    `Lock with ${ethers.formatEther(
-      lockedAmount
-    )}ETH and unlock timestamp ${unlockTime} deployed to ${lock.target}`
-  );
+  // 1 publicando el contrato de manera local
+  // npx hardhat run scripts/deploy.js
+  console.log("FIN");
 }
 
-// We recommend this pattern to be able to use async/await everywhere
-// and properly handle errors.
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
+main();
