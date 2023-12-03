@@ -1553,7 +1553,11 @@ contract Main is ERC721, Ownable, ReentrancyGuard{
     event BuyerCreated(address indexed buyer, string indexed name, uint256 indexed timestamp);
     event ProductCreated(uint256 indexed idProduct, string indexed productName, address indexed grower);
     event StateChanged(uint256 indexed idProduct, productState indexed state, uint256 indexed timestamp);
+<<<<<<< HEAD
     event ProductBuyed(uint256 indexed idProduct, uint256 indexed productPrice, uint256 fee);
+=======
+    event ProductBought(uint256 indexed idProduct, uint256 indexed productPrice, uint256 fee);
+>>>>>>> 9463e20bffc0625354efac852c01568b1d8ead89
     event TraceabilityAssetEvent(address indexed buyer, uint256 indexed idProduct, uint256 indexed traceabilityAssetId, uint256 timestamp);
     event TokenURISet(uint256 tokenId, string uri);
 
@@ -1614,7 +1618,10 @@ contract Main is ERC721, Ownable, ReentrancyGuard{
         });
         idProduct[products.length]= _product;
         products.push(_product);
+<<<<<<< HEAD
         isBuyer[msg.sender] = true;
+=======
+>>>>>>> 9463e20bffc0625354efac852c01568b1d8ead89
         emit ProductCreated(products.length, _productName, msg.sender);
     }
 
@@ -1625,6 +1632,10 @@ contract Main is ERC721, Ownable, ReentrancyGuard{
             numPurchasedProducts: 0
         });
         buyer[msg.sender] = _buyer;
+<<<<<<< HEAD
+=======
+        isBuyer[msg.sender] = true;
+>>>>>>> 9463e20bffc0625354efac852c01568b1d8ead89
         emit BuyerCreated(msg.sender, _name, block.timestamp);
     }
 
@@ -1639,7 +1650,11 @@ contract Main is ERC721, Ownable, ReentrancyGuard{
         payable(address(this)).transfer(fee);
         payable(producto.grower).transfer(producto.price);
         traceabilityAsset(_buyer, _idProduct, producto.proState);
+<<<<<<< HEAD
         emit ProductBuyed(_idProduct, producto.price, fee);
+=======
+        emit ProductBought(_idProduct, producto.price, fee);
+>>>>>>> 9463e20bffc0625354efac852c01568b1d8ead89
     }
 
     function calculateFee(uint256 _amount) internal view returns(uint256){

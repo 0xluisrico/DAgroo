@@ -1,7 +1,7 @@
 {
   "name": "DELIVERY",
  "description": "lista de nfts de DAgro Celo",
-  "image": "ipfs pending...",
+  "image": "https://bafybeid35nbknuwm2cxvqrtlqhoigtp6fwtpf3y5wdybpkfxhqjkkbpo3y.ipfs.dweb.link/delivery.jpg",
   "attributes": [
     {
       "trait_type": "delivery",
