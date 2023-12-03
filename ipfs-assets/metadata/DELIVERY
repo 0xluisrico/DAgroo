@@ -1,10 +1,10 @@
 {
-  "name": "SEEDING",
+  "name": "DELIVERY",
  "description": "lista de nfts de DAgro Celo",
   "image": "ipfs pending...",
   "attributes": [
     {
-      "trait_type": "SEEDING",
+      "trait_type": "delivery",
       "value": "active"
     }
   ]
