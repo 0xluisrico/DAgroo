@@ -1,6 +1,8 @@
 import './Vendedor.css'
 
+
 function Vendedor() {
+
     return (
         <>
 

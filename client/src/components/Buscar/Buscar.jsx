@@ -1,7 +1,7 @@
 import './Buscar.css'
-import papa from '../../assets/Papa.jpeg'
-import yuca from '../../assets/Yuca.jpeg'
-import zanahoria from '../../assets/Zanahoria.jpeg'
+import papa from '../../../public/Papa.jpeg'
+import yuca from '../../../public/Yuca.jpeg'
+import zanahoria from '../../../public/Zanahoria.jpeg'
 
 function Buscar() {
     return (

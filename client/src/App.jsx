@@ -9,9 +9,6 @@ import Vendedor from './components/Vendedor/Vendedor'
 import Buscar from './components/Buscar/Buscar'
 import Vendedor_exis from './components/Vendedor_exis/Vendedor_exis'
 
-
-
-
 function App() {
   return (
     <>

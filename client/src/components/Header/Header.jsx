@@ -1,5 +1,5 @@
 import './Header.css'
-import logo from '../../assets/logo.png'
+import logo from '../../../public/logo.png'
 import { useState } from 'react';
 // import { Contract, ethers } from "ethers";
 
@@ -8,11 +8,9 @@ import { useState } from 'react';
 function Header() {
     const [button, setMiButton] = useState('Log in');
 
-
     async function requestAccount() {
-        console.log("Requesting account...");
+        
         if (window.ethereum) {
-            console.log("Detected");
             try {
                 const  accounts = await window.ethereum.request({
                     method: 'eth_requestAccounts',
@@ -25,7 +23,7 @@ function Header() {
             alert("Metamask no detected");
         }
     }
-    
+
     return (
         <>
         <div className='navbar'>
@@ -41,6 +39,5 @@ function Header() {
         </div>
         </>
     )
-    
 }
 export default Header
