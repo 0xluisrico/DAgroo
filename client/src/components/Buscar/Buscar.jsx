@@ -1,24 +1,16 @@
-import './Home.css'
-import background from '../../assets/viejito.jpg'
+import './Buscar.css'
 import papa from '../../assets/Papa.jpeg'
 import yuca from '../../assets/Yuca.jpeg'
 import zanahoria from '../../assets/Zanahoria.jpeg'
 
-function Home () {
+function Buscar() {
     return (
         <>
-        <div className='home'>
-            <img className='background-home' src={background} alt="" />
-            <div className='filtro'></div>
-            <div className='bienv'>
-                <p>Bienvenidos</p>
-            </div>
-            <div className='text'>
-                <input className='input' type="text" name="busquedad" id="" placeholder='Busca el servicio que necesitas' />
-                <a href="/Buscar"><button  className='button-buscar' >Buscar</button></a>
-            </div>
-            <div className='title-cards'>Productos Populares</div>
-            <div className='cards'>
+        <div className='buscar-buscar'>
+            <input className='input' type="text" name="busquedad" id="" placeholder='Busca el servicio que necesitas' />
+            <a href="/Buscar"><button  className='button-buscar' >Buscar</button></a>
+        </div>
+        <div className='cards'>
         <div className='card'>
           <div className='card-img'>
             <img src={papa} className='tarjet-profile'></img>
@@ -44,10 +36,7 @@ function Home () {
             <p className='num-ventas'>23770</p>  
         </div>
       </div>
-        </div>
-        
-        
         </>
     )
 }
-export default Home
+export default Buscar

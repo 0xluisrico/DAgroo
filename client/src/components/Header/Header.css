@@ -15,7 +15,7 @@
 
 a {
 	padding: 1rem;
-	font-size: 2rem;
+	font-size: 1.3rem;
 	text-decoration: none;
 	color: #000;
 }
@@ -30,6 +30,7 @@ a {
 	width: 150px;
 	height: 50px;
 	border-radius: 1rem;
+	
 }
 .logo {
 	width: 120px;

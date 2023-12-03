@@ -38,6 +38,7 @@
 .button-buscar {
     width: 75px;
     height: 31px;
+    z-index: 1000;
 }
 .bienv {
     position: absolute;

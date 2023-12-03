@@ -1,0 +1,18 @@
+.vendedor {
+    text-align: center;
+    padding: 2rem;
+}
+.vendedor h2{
+    padding: 1rem;
+}
+.vendedor input{
+    margin: 1rem 0 1rem 0;
+}
+.vendedor button{
+    margin-top: 1rem;
+}
+.button-vendedor{
+    width: 200px;
+    height: 44px;
+    border-radius: 1rem;
+}

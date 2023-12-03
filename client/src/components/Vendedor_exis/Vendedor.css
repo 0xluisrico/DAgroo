@@ -1,0 +1,14 @@
+.perfil {
+    display: flex;
+    padding: 2.5rem;
+}
+.datos {
+    padding: 2rem;
+    text-align: start;
+}
+.datos h3,
+.datos p {
+    padding: 0.3rem;
+
+}
+

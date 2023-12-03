@@ -1,7 +1,30 @@
 import './Header.css'
 import logo from '../../assets/logo.png'
+import { useState } from 'react';
+// import { Contract, ethers } from "ethers";
+
+    
 
 function Header() {
+    const [button, setMiButton] = useState('Log in');
+
+
+    async function requestAccount() {
+        console.log("Requesting account...");
+        if (window.ethereum) {
+            console.log("Detected");
+            try {
+                const  accounts = await window.ethereum.request({
+                    method: 'eth_requestAccounts',
+                }); 
+                setMiButton(accounts[0].substring(0, 6));
+            } catch (error) {
+                console.log("error connecting");
+            }
+        } else {
+            alert("Metamask no detected");
+        }
+    }
     
     return (
         <>
@@ -11,8 +34,9 @@ function Header() {
                 <a href="/Home">DAgro Celo</a>
             </div>
             <div className='tabs'>
-                <a href="">Vendedor</a>
-                <button className='button'>Log in</button>
+                <a href="/Vendedor">Vendedor Nuevo</a>
+                <a href="/Vendedor_exis">Vendedor Existente</a>
+                <button onClick={requestAccount} className='button'>{button}</button>
             </div>
         </div>
         </>

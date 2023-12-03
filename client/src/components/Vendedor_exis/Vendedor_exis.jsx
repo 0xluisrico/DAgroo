@@ -1,23 +1,35 @@
-import './Home.css'
-import background from '../../assets/viejito.jpg'
+import './Vendedor.css'
 import papa from '../../assets/Papa.jpeg'
 import yuca from '../../assets/Yuca.jpeg'
 import zanahoria from '../../assets/Zanahoria.jpeg'
 
-function Home () {
-    return (
+function Vendedor_exis() {
+    return(
         <>
-        <div className='home'>
-            <img className='background-home' src={background} alt="" />
-            <div className='filtro'></div>
-            <div className='bienv'>
-                <p>Bienvenidos</p>
+        <div className='perfil'>
+            <div className='datos'>
+                <div>
+                    <h3>Nombre : </h3>
+                    <p> Luis Carlos</p>
+                </div>
+                <div>
+                    <br />
+                    <h3>Ubication :</h3>
+                    <p>lat: 55, long:22</p>
+                </div>
+                <div>
+                    <br />
+                    <h3>productos vendidos</h3>
+                    <p>3213</p>
+                </div>
+                
+
+                
+
+                
+
             </div>
-            <div className='text'>
-                <input className='input' type="text" name="busquedad" id="" placeholder='Busca el servicio que necesitas' />
-                <a href="/Buscar"><button  className='button-buscar' >Buscar</button></a>
-            </div>
-            <div className='title-cards'>Productos Populares</div>
+            <div className='productos'>
             <div className='cards'>
         <div className='card'>
           <div className='card-img'>
@@ -44,10 +56,12 @@ function Home () {
             <p className='num-ventas'>23770</p>  
         </div>
       </div>
+
+
+            </div>
+
         </div>
-        
-        
         </>
     )
 }
-export default Home
+export default Vendedor_exis

@@ -14,13 +14,11 @@ function Footer() {
                     <a href="https://twitter.com/0xwispy" target='blanck'>Santiago Rojas</a>
                     <a href="https://twitter.com/chocoflowww" target='blanck'>Samuel Lopez</a>
                     <a href="https://www.linkedin.com/in/luisricox0/" target='blanck'>0xchimex</a>
-                </div>
-                
-                
+                </div>    
             </div>
             <div className='redes'>
                 <h2>Sigue el proyecto</h2>
-                <a href="https://twitter.com/dagrocelo">Twitter</a>
+                <a href="https://twitter.com/dagrocelo" target='blank'>Twitter</a>
                          
             </div>
         </div>
