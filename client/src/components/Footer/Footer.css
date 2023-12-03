@@ -1,0 +1,49 @@
+.footer {
+    display: flex;
+    background-color: rgb(70, 71, 55);
+    width: 100%;
+    height: auto;
+    z-index: 100;
+    bottom: 0;
+    border-top: 2px solid #8e916f;
+    margin-top: 2rem;
+    justify-content: space-around;
+    padding: 1rem;
+    color: #f8f6e9;
+}
+.links {
+    display: flex;
+}
+.footer a {
+    color: #f8f6e9;
+}
+.devs li{
+    padding: 0.3rem;
+}
+.devs h2{
+    padding-bottom: .7rem;
+}
+.devs {
+    display: flexbox;
+    width: 50%;
+    height: 150px;
+    text-align: center;
+}
+
+.devs a{
+    padding: 1rem;
+}
+.footer a {
+    font-size: 23px;
+}
+.redes {
+    display: grid;
+    place-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.logo-footer {
+    width: 200px;
+    height: 200px;
+    margin: 0 0;
+}
