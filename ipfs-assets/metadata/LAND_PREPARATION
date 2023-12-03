@@ -1,0 +1,12 @@
+{
+  "name": "LAND_PREPARATION",
+ "description": "lista de nfts de DAgro Celo",
+  "image": "ipfs pending...",
+  "attributes": [
+    {
+      "trait_type": "land_preparation",
+      "value": "active"
+    }
+
+  ]
+}
